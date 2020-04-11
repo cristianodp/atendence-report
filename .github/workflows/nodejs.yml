@@ -21,8 +21,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: cd chamada-react-app && npm i && npm run build
+      - run: ls chamada-react-app/build
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
+      - run: ls chamada-react-app/build
         with:
           args: deploy --only hosting
         env:
