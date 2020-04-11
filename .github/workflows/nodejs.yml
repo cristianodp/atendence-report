@@ -20,10 +20,8 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - run: cd chamada-react-app
-      - run: npm i
-      - run: npm run build
-      - run: npm test
+      - run: cd chamada-react-app && npm i && npm test
+      - run: cd chamada-react-app && npm run build
  
       - name: Deploy to Firebase
         uses: w9jds/firebase-action@master
